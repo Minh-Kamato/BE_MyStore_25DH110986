@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BE_MyStore_25DH110986.Models.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Area/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new {id = item.CategoryID})
+                        @Html.ActionLink("Details", "Details", new {id = item.CategoryID})
+                        @Html.ActionLink("Delete", "Delete", new {id = item.CategoryID})
+                    </td>
+                </tr>
+            }
+</table>
+
+
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        Ajinamoto
+    </div>
+</body>
+</html>*@
